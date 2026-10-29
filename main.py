@@ -8,6 +8,7 @@ from routers.cliente_router import router as clientes_router
 from routers.tipo_pago_router import router as tipo_pago_router
 from routers.venta_router import router as ventas_router
 from routers.detalle_venta_router import router as detalle_ventas_router
+from routers.usuario_router import router as usuarios_router
 
 
 @asynccontextmanager
@@ -20,6 +21,7 @@ app.title = "API Tienda la Cachaca"
 app.version = "0.0.1"
 app.include_router(categoria_router, tags=["Categorias"])
 app.include_router(productos_router, tags=["productos"])
+app.include_router(usuarios_router, tags=["Usuarios"])
 
 
 @app.get("/", summary="Comprobndo estado de api", status_code=status.HTTP_200_OK)
